@@ -119,7 +119,7 @@ button:hover {
     
     
     
-      fetch('http://127.0.0.1:3000/insert?email='+document.getElementById('email').value+'&password='+document.getElementById('pass').value+"&Firstname="+document.getElementById('name').value)
+      fetch('https://lit-wildwood-06752.herokuapp.com/insert?email='+document.getElementById('email').value+'&password='+document.getElementById('pass').value+"&Firstname="+document.getElementById('name').value)
       .then((response)=>response.text())
       .then((json)=>{document.getElementById("response").innerHTML = json})
       .catch((err)=>console.log(err))
@@ -145,7 +145,7 @@ button:hover {
       // }),
         rediret:'follow'
       }
-      fetch('http://127.0.0.1:3000/allusers')
+      fetch('https://lit-wildwood-06752.herokuapp.com/allusers')
       .then((response)=>response.text())
       .then((json)=>{document.getElementById("response").innerHTML = json})
       .catch((err)=>console.log(err))
