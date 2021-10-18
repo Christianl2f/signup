@@ -79,13 +79,13 @@ button:hover {
     <p>Please fill in this form to create an account.</p>
     <hr>
 
-    <label for="email"><b>Email</b></label>
+    <label ><b>Email</b></label>
     <input type="text" placeholder="Enter Email"  id="email" required>
 
-    <label for="psw"><b>Password</b></label>
+    <label ><b>Password</b></label>
     <input type="password" placeholder="Enter Password"  id="pass" required>
 
-    <label for="psw-repeat"><b>First Name</b></label>
+    <label ><b>First Name</b></label>
     <input type="text" placeholder="Enter Your First Name"  id="name" required>
     
   
@@ -102,6 +102,9 @@ button:hover {
 
 
     <button  class="signupbtn" id="get">get all users </button>
+    <label id="emaill">hii</label>
+ 
+ 
   </div>
 
 
@@ -113,13 +116,16 @@ button:hover {
 <script>
     document.getElementById('signup').onclick=signup
     function signup(){
+      document.getElementById("emaill").innerHTML=document.getElementById("email").value 
+
+
       var myHeaders =  new Headers();
       myHeaders.append("Content-type","applications/json");
    
     
     
     
-      fetch('https://lit-wildwood-06752.herokuapp.com/insert?email='+document.getElementById('email').value+'&password='+document.getElementById('pass').value+"&Firstname="+document.getElementById('name').value)
+      fetch('http://127.0.0.1:3000/insert?email='+document.getElementById('email').value+'&password='+document.getElementById('pass').value+"&Firstname="+document.getElementById('name').value)
       .then((response)=>response.text())
       .then((json)=>{document.getElementById("response").innerHTML = json})
       .catch((err)=>console.log(err))
@@ -145,7 +151,7 @@ button:hover {
       // }),
         rediret:'follow'
       }
-      fetch('https://lit-wildwood-06752.herokuapp.com/allusers')
+      fetch('http://127.0.0.1:3000/allusers')
       .then((response)=>response.text())
       .then((json)=>{document.getElementById("response").innerHTML = json})
       .catch((err)=>console.log(err))
