@@ -75,7 +75,7 @@ button:hover {
 
 
   <div class="container">
-    <h1>Sign Up589674</h1>
+    <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
@@ -102,7 +102,7 @@ button:hover {
 
 
     <button  class="signupbtn" id="get">get all users </button>
-    <label id="emaill">hii</label>
+   
  
  
   </div>
@@ -116,7 +116,7 @@ button:hover {
 <script>
     document.getElementById('signup').onclick=signup
     function signup(){
-      document.getElementById("emaill").innerHTML=document.getElementById("email").value 
+      
 
 
       var myHeaders =  new Headers();
@@ -125,7 +125,7 @@ button:hover {
     
     
     
-      fetch('http://127.0.0.1:3000/insert?email='+document.getElementById('email').value+'&password='+document.getElementById('pass').value+"&Firstname="+document.getElementById('name').value)
+      fetch('https://lit-wildwood-06752.herokuapp.com/insert?email='+document.getElementById('email').value+'&password='+document.getElementById('pass').value+"&Firstname="+document.getElementById('name').value)
       .then((response)=>response.text())
       .then((json)=>{document.getElementById("response").innerHTML = json})
       .catch((err)=>console.log(err))
@@ -151,7 +151,7 @@ button:hover {
       // }),
         rediret:'follow'
       }
-      fetch('http://127.0.0.1:3000/allusers')
+      fetch('https://lit-wildwood-06752.herokuapp.com/allusers')
       .then((response)=>response.text())
       .then((json)=>{document.getElementById("response").innerHTML = json})
       .catch((err)=>console.log(err))
